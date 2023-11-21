@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomeMovieComponent } from './movies/home-movie/home-movie.component';
+import { HomeMovieComponent } from './movies/pages/home/home-movie.component';
 
 export const routes: Routes = [
   {

@@ -10,8 +10,8 @@ import {
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { NgFor } from '@angular/common';
-import { Part2Component } from '../pages/principal/part2/part2.component';
-import { Part1Component } from '../pages/principal/part1/part1.component';
+import { Part2Component } from '../principal/part2/part2.component';
+import { Part1Component } from '../principal/part1/part1.component';
 
 @Component({
   selector: 'app-home-movie',
