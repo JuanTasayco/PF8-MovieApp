@@ -10,10 +10,12 @@ import { CanvasComponent } from '../../../../shared/canvas/canvas.component';
 import { gsap } from 'gsap';
 import { OnInit } from '@angular/core';
 import { MoviesService } from '../../../services/movies.service';
+import { RatingComponent } from '../../../../shared/rating/rating.component';
+
 @Component({
   selector: 'app-part1',
   standalone: true,
-  imports: [CanvasComponent],
+  imports: [CanvasComponent, RatingComponent],
   templateUrl: './part1.component.html',
   styleUrl: './part1.component.scss',
 })

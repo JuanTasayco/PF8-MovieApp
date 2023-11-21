@@ -1,0 +1,9 @@
+.Principal {
+  width: min(100%, 1400px);
+  margin: auto;
+  &-h1 {
+    /*  text-wrap: balance; */
+
+    line-height: 4.7rem;
+  }
+}

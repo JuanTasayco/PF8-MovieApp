@@ -1,6 +1,42 @@
-<div>
-  <h1 class="text-[4rem] font-bolder" #title>Películas</h1>
-  <h1 class="text-[4rem] font-bolder hidden" #title>Reseñas</h1>
-  <h1 class="text-[4rem] font-bolder hidden" #title>Puntuaciones</h1>
-  <app-canvas></app-canvas>
+<div class="Principal h-[100dvh]" style="border: 2px solid purple">
+  <div
+    class="Principal-container flex flex-col lg:flex-row"
+    style="border: 2px solid red"
+  >
+    <div class="Principal-column md:basis-[60%] p-7 flex flex-col gap-5">
+      <h1 class="Principal-h1 text-[3rem] sm:text-[4rem] font-bold">
+        Busca tu película. Revisa, Califica, Comenta
+      </h1>
+
+      <p class="Principal-p text-slate-700 text-lg md:w-[90%]">
+        This book covers the latest design principles and techniques, including
+        responsive design, mobile interface design, and user research
+        methodologies
+      </p>
+
+      <div class="Principal-buttons flex gap-4">
+        <button class="border px-5 py-3 rounded-lg">Buscar Película</button>
+        <button class="border px-5 py-3 rounded-lg">Ver tendencias</button>
+      </div>
+
+      <div class="Principal-footer flex gap-5">
+        <div class="flex -space-x-4 rtl:space-x-reverse">
+          @for(item of [1,2,3,4]; track $index;){
+          <img
+            class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
+            src="assets/naruto.jfif"
+            alt=""
+          />
+          }
+        </div>
+        <div class="border"></div>
+        <div>
+          <app-rating></app-rating>
+        </div>
+      </div>
+    </div>
+    <div class="Principal-column grow"><h1>hola</h1></div>
+  </div>
 </div>
+
+<app-canvas></app-canvas>
