@@ -1,0 +1,8 @@
+.Canvas {
+  width: min(100%, 1500px);
+  margin: auto;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}

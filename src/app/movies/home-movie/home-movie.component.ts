@@ -11,42 +11,23 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { NgFor } from '@angular/common';
 import { Part2Component } from '../pages/principal/part2/part2.component';
+import { Part1Component } from '../pages/principal/part1/part1.component';
 
 @Component({
   selector: 'app-home-movie',
   standalone: true,
-  imports: [NgFor, Part2Component],
+  imports: [NgFor, Part1Component, Part2Component],
   templateUrl: './home-movie.component.html',
   styleUrl: './home-movie.component.scss',
 })
 export class HomeMovieComponent implements AfterViewInit {
   @ViewChild('container') container!: ElementRef<HTMLDivElement>;
   @ViewChildren('child') childs!: QueryList<ElementRef>;
-  /*   @ViewChildren('title') titles!: QueryList<ElementRef>; */
 
   ngAfterViewInit(): void {
     gsap.registerPlugin(ScrollTrigger);
-    /*  this.animationTitle(); */
     this.scrollHorizontal();
   }
-
-  /* animationTitle() {
-    const tl = gsap.timeline({
-      repeat: -1,
-    });
-    this.titles.forEach(({ nativeElement: element }) => {
-      tl.to(element, {
-        duration: 2,
-        ease: 'power2.inOut',
-        onStart: () => {
-          element.classList.remove('hidden');
-        },
-        onComplete: () => {
-          element.classList.add('hidden');
-        },
-      });
-    });
-  } */
 
   scrollHorizontal() {
     const longContainer = this.container.nativeElement.offsetWidth;
@@ -63,19 +44,5 @@ export class HomeMovieComponent implements AfterViewInit {
         end: `+=${longContainer}`,
       },
     });
-
-    /*  this.childs.forEach(({ nativeElement: el }, index, arr) => {
-      gsap.to(el, {
-        xPercent: -100 * (arr.length-1),
-        scrollTrigger: {
-          trigger: this.container.nativeElement,
-          scrub: true,
-          markers: true,
-          start: 'top top',
-          pin: true,
-          end: `+=${longContainer}`,
-        },
-      });
-    }); */
   }
 }
