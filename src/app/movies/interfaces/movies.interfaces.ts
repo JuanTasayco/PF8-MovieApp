@@ -1,20 +1,20 @@
 export type TIME = 'day' | 'week';
 
 /*TOP movies and TV response */
-export interface MovieTvResponse {
+export interface TopMovieTvResponse {
   page: number;
-  results: ResultMovieTv[];
+  results: TopResultMovieTv[];
   total_pages: number;
   total_results: number;
 }
 
-export interface ResultMovieTv {
+export interface TopResultMovieTv {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
   id: number;
   origin_country: string[];
-  original_language: OriginalLanguage | string;
+  original_language: TopOriginalLanguage | string;
   original_name: string;
   overview: string;
   popularity: number;
@@ -25,7 +25,7 @@ export interface ResultMovieTv {
   vote_count: number;
 }
 
-export enum OriginalLanguage {
+export enum TopOriginalLanguage {
   En = 'en',
   Es = 'es',
   Ja = 'ja',
@@ -46,7 +46,7 @@ export interface ResultTrend {
   backdrop_path: string;
   id: number;
   title?: string;
-  original_language: OriginalLanguage;
+  original_language: TopOriginalLanguage;
   original_title?: string;
   overview: string;
   poster_path: string;

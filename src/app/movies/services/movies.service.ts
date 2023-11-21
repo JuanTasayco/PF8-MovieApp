@@ -1,7 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
-import { TIME } from '../interfaces/movies.interfaces';
+import {
+  Actor,
+  MovieDetails,
+  TIME,
+  TopMovieTvResponse,
+  Trendings,
+} from '../interfaces/movies.interfaces';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,8 +16,10 @@ import { TIME } from '../interfaces/movies.interfaces';
 export class MoviesService {
   private api_url = environment.api_url;
 
-  trendingMoviesAndSeries(type: TIME) {
-    return this.http.get(`${this.api_url}/trending/all/${type}?language=es-PE`);
+  trendingMoviesAndSeries(type: TIME): Observable<Trendings> {
+    return this.http.get<Trendings>(
+      `${this.api_url}/trending/all/${type}?language=es-PE`
+    );
   }
 
   searchMovies(movie: string) {
@@ -19,22 +28,26 @@ export class MoviesService {
     );
   }
 
-  searchActors(actor: string) {
-    return this.http.get(
+  searchActors(actor: string): Observable<Actor> {
+    return this.http.get<Actor>(
       `${this.api_url}/search/person?query=${actor}&include_adult=false&language=es-PE&page=1`
     );
   }
 
-  getMovieById(idMovie: string) {
-    return this.http.get(`${this.api_url}/tv/${idMovie}?language=es-PE`);
+  getMovieById(idMovie: string): Observable<MovieDetails> {
+    return this.http.get<MovieDetails>(
+      `${this.api_url}/tv/${idMovie}?language=es-PE`
+    );
   }
 
-  getTopMovies() {
-    return this.http.get(`${this.api_url}/tv/top_rated?language=es-PE&page=1`);
+  getTopMovies(): Observable<TopMovieTvResponse> {
+    return this.http.get<TopMovieTvResponse>(
+      `${this.api_url}/tv/top_rated?language=es-PE&page=1`
+    );
   }
 
-  getTopTvSeries() {
-    return this.http.get(
+  getTopTvSeries(): Observable<TopMovieTvResponse> {
+    return this.http.get<TopMovieTvResponse>(
       `${this.api_url}/movie/top_rated?language=es-PE&page=1`
     );
   }
