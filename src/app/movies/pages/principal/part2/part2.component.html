@@ -1,0 +1,33 @@
+<div class="MoviesBanner rounded-lg flex-1">
+  <div class="MoviesBanner-row MoviesBanner-row--carrousel grid md:grid-cols-2">
+    <div
+      class="MoviesBanner-description MoviesBanner-description--carrousel p-8 md:p-[4.5rem]"
+    >
+      <h2 class="MoviesBanner-h2 MoviesBanner-h2--bg tracking-tighter">
+        Películas de todo tipo
+      </h2>
+      <p>
+        Puedes revisar las películas más rankeadas o buscar la que desees de una
+        manera rápida y sencilla.
+      </p>
+      <button
+        class="MoviesBanner-button py-3 px-2 rounded-lg border bg-gradient-to-tl from-blue-600 via-sky-200 to-blue-700"
+      >
+        Ver peliculas top
+      </button>
+    </div>
+    <div class="MoviesBanner-carrousel my-auto">
+      <app-carrousel></app-carrousel>
+    </div>
+  </div>
+
+  <div
+    class="MoviesBanner-row grid md:grid-cols-3 gap-3 md:h-[50%] p-5 mx-auto"
+  >
+    @for(item of [1,2,3]; track item){
+    <div class="MoviesBanner-card">
+      <app-card></app-card>
+    </div>
+    }
+  </div>
+</div>

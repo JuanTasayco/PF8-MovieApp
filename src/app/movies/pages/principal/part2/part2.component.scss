@@ -1,0 +1,39 @@
+.MoviesBanner {
+  margin: auto;
+  height: 100%;
+  width: min(95%, 1200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  &-row {
+    &--carrousel {
+      background-color: #fafaf9;
+    }
+  }
+
+  &-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.7rem;
+  }
+
+  &-h2 {
+    font-size: clamp(0.5rem, 2rem, 4rem);
+    &--bg {
+      color: transparent;
+      background-clip: text;
+      background-color: #4158d0;
+      background-image: linear-gradient(
+        43deg,
+        #4158d0 0%,
+        #c850c0 46%,
+        #ffcc70 100%
+      );
+    }
+  }
+}
