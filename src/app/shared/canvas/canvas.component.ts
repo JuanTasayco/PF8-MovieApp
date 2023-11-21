@@ -81,7 +81,6 @@ export class CanvasComponent implements AfterViewInit {
 
   moveBallsOffscreen() {
     gsap.from(this.balls, {
-      opacity: 0,
       duration: 3, // Duración de la animación
       x: window.innerWidth + 100, // Mover las bolas fuera de la pantalla en el eje X
       y: () => Math.random() * window.innerHeight, // Posición aleatoria en el eje Y

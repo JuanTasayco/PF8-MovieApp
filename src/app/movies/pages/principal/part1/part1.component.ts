@@ -4,9 +4,12 @@ import {
   ElementRef,
   QueryList,
   ViewChildren,
+  inject,
 } from '@angular/core';
 import { CanvasComponent } from '../../../../shared/canvas/canvas.component';
 import { gsap } from 'gsap';
+import { OnInit } from '@angular/core';
+import { MoviesService } from '../../../services/movies.service';
 @Component({
   selector: 'app-part1',
   standalone: true,
@@ -14,12 +17,14 @@ import { gsap } from 'gsap';
   templateUrl: './part1.component.html',
   styleUrl: './part1.component.scss',
 })
-export class Part1Component implements AfterViewInit {
+export class Part1Component implements AfterViewInit, OnInit {
+  serviceMovie = inject(MoviesService);
   @ViewChildren('title') titles!: QueryList<ElementRef>;
-
-  ngAfterViewInit(): void {
-    this.animationTitle();
+  ngOnInit(): void {
+    this.serviceMovie.getTopMovies().subscribe(console.log);
   }
+
+  ngAfterViewInit(): void {}
 
   animationTitle() {
     const tl = gsap.timeline({
