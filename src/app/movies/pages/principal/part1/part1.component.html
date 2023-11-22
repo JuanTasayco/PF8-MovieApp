@@ -1,9 +1,6 @@
-<div class="Principal h-[100dvh]" style="border: 2px solid purple">
-  <div
-    class="Principal-container flex flex-col lg:flex-row"
-    style="border: 2px solid red"
-  >
-    <div class="Principal-column md:basis-[60%] p-7 flex flex-col gap-5">
+<div class="Principal h-[100%]" style="border: 2px solid green">
+  <div class="Principal-container flex flex-col lg:flex-row">
+    <div class="Principal-column md:basis-[65%] p-7 flex flex-col gap-5">
       <h1 class="Principal-h1 text-[3rem] sm:text-[4rem] font-bold">
         Busca tu película. Revisa, Califica, Comenta
       </h1>
@@ -19,7 +16,7 @@
         <button class="border px-5 py-3 rounded-lg">Ver tendencias</button>
       </div>
 
-      <div class="Principal-footer flex gap-5">
+      <div class="Principal-footer flex gap-5 items-center">
         <div class="flex -space-x-4 rtl:space-x-reverse">
           @for(item of [1,2,3,4]; track $index;){
           <img
@@ -30,8 +27,11 @@
           }
         </div>
         <div class="border"></div>
-        <div>
-          <app-rating></app-rating>
+        <div class="flex flex-col gap-1">
+          <app-rating [numberRating]="4"></app-rating>
+          <small class="text-slate-700 text-sm"
+            >Las puntuaciones están basadas en 15.7k opiniones
+          </small>
         </div>
       </div>
     </div>
