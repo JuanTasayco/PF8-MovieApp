@@ -40,6 +40,12 @@ export class MoviesService {
     );
   }
 
+  searchTvSeries(serie: string) {
+    return this.http.get(
+      `${this.api_url}/search/tv?query=${serie}&include_adult=false&language=es-PE&page=1`
+    );
+  }
+
   getMovieById(idMovie: string): Observable<MovieDetails> {
     return this.http.get<MovieDetails>(
       `${this.api_url}/tv/${idMovie}?language=es-PE`
