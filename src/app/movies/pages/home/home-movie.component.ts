@@ -38,7 +38,6 @@ export class HomeMovieComponent implements AfterViewInit {
       scrollTrigger: {
         trigger: this.container.nativeElement,
         scrub: true,
-        markers: true,
         start: 'top top',
         pin: true,
         end: `+=${longContainer}`,
