@@ -22,9 +22,15 @@ export class MoviesService {
     );
   }
 
-  searchMovies(movie: string) {
+  searchMovies(movie: string, year: string) {
     return this.http.get(
-      `${this.api_url}/search/collection?query=${movie}&include_adult=false&language=es-PE&page=1`
+      `${this.api_url}/search/movie?query=${movie}&include_adult=false&language=es-PE&page=1&year=2005`
+    );
+  }
+
+  searchCollection(collection: string) {
+    return this.http.get(
+      `${this.api_url}/search/collection?query=${collection}&include_adult=false&language=es-PE&page=1`
     );
   }
 

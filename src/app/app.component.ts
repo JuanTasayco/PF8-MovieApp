@@ -5,10 +5,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
 import { initFlowbite } from 'flowbite';
 import { LenisService } from './lenis/lenis.service';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavBarComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

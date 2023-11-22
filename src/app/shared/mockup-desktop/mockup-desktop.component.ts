@@ -22,13 +22,12 @@ export class MockupDesktopComponent implements AfterViewInit {
 
   animationTitle() {
     const tl = gsap.timeline({
-      delay: 3,
       repeat: -1,
     });
     this.mockups.forEach(({ nativeElement: element }) => {
       tl.to(element, {
         opacity: 0,
-        duration: 2,
+        duration: 3,
         ease: 'power2.inOut',
         onStart: () => {
           element.classList.remove('hidden');
